@@ -15,6 +15,7 @@ public class Example1Controller {
 	@GetMapping("/hello/{name}")
 	public ModelAndView hello(@PathVariable("name") String name) {
 		ModelAndView modelAndView = new ModelAndView(HELLO_VIEW);
+		int i = 6/0;
 		modelAndView.addObject("name", name);
 		return modelAndView;
 	}
