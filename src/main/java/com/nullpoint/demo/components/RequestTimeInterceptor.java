@@ -17,6 +17,7 @@ public class RequestTimeInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		request.setAttribute("startTime", System.currentTimeMillis());
+		LOGGER.info("--REQUEST URL: '" + request.getRequestURL() + "' -- IN");
 		return true;
 	}
 
