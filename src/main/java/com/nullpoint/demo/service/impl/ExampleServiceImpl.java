@@ -1,4 +1,4 @@
-package com.nullpoint.demo.impl;
+package com.nullpoint.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
