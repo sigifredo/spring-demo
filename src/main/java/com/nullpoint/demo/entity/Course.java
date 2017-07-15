@@ -18,7 +18,7 @@ public class Course {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desctription")
+	@Column(name = "description")
 	private String description;
 
 	@Column(name = "price")
@@ -82,4 +82,11 @@ public class Course {
 	public void setHours(int hours) {
 		this.hours = hours;
 	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours="
+				+ hours + "]";
+	}
+
 }
