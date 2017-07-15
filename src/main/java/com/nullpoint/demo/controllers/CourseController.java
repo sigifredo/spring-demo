@@ -15,7 +15,7 @@ import com.nullpoint.demo.entity.Course;
 import com.nullpoint.demo.services.CourseService;
 
 @Controller
-@RequestMapping("/course")
+@RequestMapping("/courses")
 public class CourseController {
 
 	private static final String COURSES_VIEW = "courses";
@@ -31,6 +31,7 @@ public class CourseController {
 
 		ModelAndView modelAndView = new ModelAndView(COURSES_VIEW);
 		modelAndView.addObject("courses", courseService.listAllCourses());
+		modelAndView.addObject("course", new Course());
 		return modelAndView;
 	}
 
@@ -39,6 +40,6 @@ public class CourseController {
 		LOGGER.info("Call: addCourse() -- PARAM: " + course);
 
 		courseService.addCourse(course);
-		return "redirect:/course/listcourses";
+		return "redirect:/courses/listcourses";
 	}
 }
