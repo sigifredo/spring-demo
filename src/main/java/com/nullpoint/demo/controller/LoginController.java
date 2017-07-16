@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nullpoint.demo.constant.ViewConstant;
 import com.nullpoint.demo.model.UserCredential;
 
 @Controller
@@ -30,7 +31,7 @@ public class LoginController {
 		model.addAttribute("error", error);
 		model.addAttribute("logout", logout);
 		model.addAttribute("userCredentials", new UserCredential());
-		return "login";
+		return ViewConstant.LOGIN;
 	}
 
 	@PostMapping("/logincheck")
@@ -39,7 +40,7 @@ public class LoginController {
 
 		if (userCredential.getUserName().equals("user") && userCredential.getPassword().equals("user")) {
 			LOGGER.info("Returning to contacts view");
-			return "contacts";
+			return "redirect:/contacts/showcontacts";
 		} else {
 			LOGGER.info("Returning to login?error");
 			return "redirect:/login?error";
